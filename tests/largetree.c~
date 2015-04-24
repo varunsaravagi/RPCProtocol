@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <dirtree.h>
+#include <string.h>
+
+
+void main(){
+	struct dirtreenode *tree1, *tree2, *tree3;
+	int i;
+	for (i = 0; i<6000; i++){	
+		fprintf(stderr, "Counter %d\n", i);
+		fprintf(stderr, "Getdirtree1\n------");		
+		tree1 = getdirtree(".");
+		fprintf(stderr, "Getdirtree2\n------");
+		tree2 = getdirtree(".");
+		fprintf(stderr, "Getdirtree3\n------");
+		tree3 = getdirtree(".");
+		fprintf(stderr, "Freedirtree1\n-----");
+		freedirtree(tree1);
+		fprintf(stderr, "Freedirtree2\n-----");
+		freedirtree(tree2);
+		fprintf(stderr, "Freedirtree3\n-----");
+		freedirtree(tree3);
+	}
+}
